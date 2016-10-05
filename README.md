@@ -23,7 +23,7 @@ I found the source files pretty messy, but after some reading and actually looki
 * After reading the advice of David Hood on the assignment (https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/) I came to the conclusion that I do not need the files in the 'inertial' folders.
 
 #### The code
-I begin this codeblock by reading in what I call the 'metatdata', that is the activity labels from activity_lables.txt and the measurement column names from features.txt. This data is valid for both the train and the test data sets. For this and all subsequent files I do already provide column names when reading the data, although in the assignment instructions that is listed as point 4.
+I begin this codeblock by reading in what I call the 'metadata', that is the activity labels from activity_lables.txt and the measurement column names from features.txt. This data is valid for both the train and the test data sets. For this and all subsequent files I do already provide column names when reading the data, although in the assignment instructions that is listed as point 4.
 
 As I do not need all the measurements (which I call facts), but only the ones labelled mean() and std(), I use a simple regular expression in the grep()-function to create a vector of only the relevant rows from features.txt. This vector I will use for subsetting later on. The assignment is not perfectly clear on whether the 'meanFreq()' columns are relevant as well, so I decided to ignore them.
 
