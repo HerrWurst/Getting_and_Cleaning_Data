@@ -52,12 +52,13 @@ I begin by loading the libraries I intend to use for this assignment. Then follo
 
 First, I reorder the dataset. I then transpose all the measurement columns, so I have the column headers as values instead of columns. 
 
-Now I can split up the signal information into several columns. I do that by the separate function and several substrings, which is a wee bit tedious. It gets the job done, though.
+Now I can split up the signal information into several columns. I do that by the separate function and several substrings, which deserve a little explaining:
+
+First, I extract the measurement type (meaning 'mean' or 'std'). I do so by using a little regular expression looking for a single dot character (when assigning the feature-values as column headers before, R substituted all hyphens and brackets with dots). That way, however, the axis information is lost. I solve this by another separate-statement, where I look for exactly three dots (as said before, R had replaced '()-' with '...'). In a later mutate-statement I then attach the axis info to the signal info. The domain on the other hand is easy, as it is simply the first letter of the measurement value.
 
 I then chain several mutate-commands with the intent of providing nice, descriptive labels.
 
 And after all that is done I aggregate the dataset and calculate the mean of each set of measurements. It is in this step that I 're-transpose' the measurement types of mean and std back into individual columns.
 
 Finally, I save the result to a file. You can read it into your R via 
-If you have run my script beforehand you can use 
-data <- read.table('./data/tidydata.txt', header = TRUE)
+data <- read.table('./data/tidydata.txt', header = TRUE) if you have run my script beforehand.
