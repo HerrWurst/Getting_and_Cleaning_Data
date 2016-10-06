@@ -6,8 +6,8 @@ The grain of this dataset is 'average mean and standard deviation values per com
 ## Columns
 ### dataset
   Character variable specifying whether the record is based on data from the training set or from the test set; values:
-    - train
-    - test
+    * train
+    * test
     
 ### subjectID
   Unique ID referring to the participant of the study; values:
